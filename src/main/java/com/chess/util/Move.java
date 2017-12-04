@@ -1,17 +1,36 @@
 package com.chess.util;
 
 import com.chess.model.Cell;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+
+import java.io.Serializable;
+
 
 /**
  * Created by ivan.hrynchyshyn on 17.11.2017.
  */
-@AllArgsConstructor
-@Getter
-@Setter
-public class Move {
+
+public class Move implements Serializable{
     private Cell source;
     private Cell destination;
+
+    public Move(Cell source, Cell destination) {
+        this.source = source;
+        this.destination = destination;
+    }
+
+    public Cell getSource() {
+        return source;
+    }
+
+    public void setSource(Cell source) {
+        this.source = source;
+    }
+
+    public Cell getDestination() {
+        return destination;
+    }
+
+    public void setDestination(Cell destination) {
+        this.destination = destination;
+    }
 }

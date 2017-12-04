@@ -5,8 +5,7 @@ import com.chess.saver.AbstractSaver;
 import com.chess.util.Color;
 import com.chess.util.Move;
 import com.chess.util.Player;
-import lombok.Getter;
-import lombok.Setter;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,7 @@ import java.util.Queue;
 /**
  * Created by ivan.hrynchyshyn on 15.11.2017.
  */
-@Getter
-@Setter
+
 public class Board{
    private Cell[][] cells = new Cell[8][8];
    private Player whitePlayer;
@@ -25,6 +23,54 @@ public class Board{
    private boolean isWin;
    private Queue<Move> moves = new PriorityQueue<>();
    private AbstractSaver saver;
+
+   public Cell[][] getCells() {
+      return cells;
+   }
+
+   public void setCells(Cell[][] cells) {
+      this.cells = cells;
+   }
+
+   public Player getWhitePlayer() {
+      return whitePlayer;
+   }
+
+   public void setWhitePlayer(Player whitePlayer) {
+      this.whitePlayer = whitePlayer;
+   }
+
+   public Player getBlackPlayer() {
+      return blackPlayer;
+   }
+
+   public void setBlackPlayer(Player blackPlayer) {
+      this.blackPlayer = blackPlayer;
+   }
+
+   public boolean isWin() {
+      return isWin;
+   }
+
+   public void setWin(boolean win) {
+      isWin = win;
+   }
+
+   public Queue<Move> getMoves() {
+      return moves;
+   }
+
+   public void setMoves(Queue<Move> moves) {
+      this.moves = moves;
+   }
+
+   public AbstractSaver getSaver() {
+      return saver;
+   }
+
+   public void setSaver(AbstractSaver saver) {
+      this.saver = saver;
+   }
 
    private void initializeBoard() {
       boolean isWhite = true;

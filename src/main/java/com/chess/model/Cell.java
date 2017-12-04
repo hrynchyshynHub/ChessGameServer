@@ -2,16 +2,12 @@ package com.chess.model;
 
 import com.chess.model.pieces.Piece;
 import com.chess.util.Color;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  * Created by ivan.hrynchyshyn on 17.11.2017.
  */
-@AllArgsConstructor
-@Getter
-@Setter
+
 public class Cell {
     private boolean isPosibleDestination;    /**available for next move*/
     private Piece piece;
@@ -27,6 +23,66 @@ public class Cell {
         this.y = y;
         this.color = color;
         this.id = x + "" + y;
+    }
+
+    public boolean isPosibleDestination() {
+        return isPosibleDestination;
+    }
+
+    public void setPosibleDestination(boolean posibleDestination) {
+        isPosibleDestination = posibleDestination;
+    }
+
+    public Piece getPiece() {
+        return piece;
+    }
+
+    public void setPiece(Piece piece) {
+        this.piece = piece;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public char getY() {
+        return y;
+    }
+
+    public void setY(char y) {
+        this.y = y;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
+    public boolean isCheck() {
+        return isCheck;
+    }
+
+    public void setCheck(boolean check) {
+        isCheck = check;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
